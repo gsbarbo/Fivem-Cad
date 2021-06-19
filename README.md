@@ -73,7 +73,7 @@ Run in order:
 
 `npm install` => Installs Tailwindcss and App Dependicies
 
-copy and rename `.env.example` to `.env`
+`copy .env.example .env` => Copies and Renames to .env
 
 `php artisan key:generate`
 
