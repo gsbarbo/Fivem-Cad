@@ -21,7 +21,7 @@
     @yield('styles')
 </head>
 
-<body class="bg-gray-300">
+<body class="bg-gray-800">
 
     @include('_inc.public.navbar')
 

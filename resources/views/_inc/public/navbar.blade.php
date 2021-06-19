@@ -1,6 +1,6 @@
 <header x-data="{ mobileMenuOpen : false }"
-    class="relative flex flex-row flex-wrap justify-between px-6 py-6 bg-white md:items-center md:space-x-4">
-    <a href="#" class="block">
+    class="relative flex flex-row flex-wrap justify-between px-6 py-6 bg-gray-900 md:items-center md:space-x-4">
+    <a href="#" class="block text-indigo-500">
         {{ config('cad.community_name') }}
     </a>
     <button @click="mobileMenuOpen = !mobileMenuOpen"
@@ -11,13 +11,20 @@
                 clip-rule="evenodd"></path>
         </svg>
     </button>
-    <nav class="absolute left-0 z-20 flex-col w-full p-6 pt-0 font-semibold bg-white rounded-lg shadow-md md:relative top-16 md:top-0 md:flex md:flex-row md:space-x-6 md:w-auto md:rounded-none md:shadow-none md:p-0"
+    <nav class="absolute left-0 z-20 flex-col w-full p-6 pt-0 font-semibold bg-gray-900 rounded-lg shadow-md md:relative top-16 md:top-0 md:flex md:flex-row md:space-x-6 md:w-auto md:rounded-none md:shadow-none md:p-0"
         :class="{ 'flex' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}" @click.away="mobileMenuOpen = false">
 
-        <a href="#" class="block py-1 text-indigo-600 hover:underline">Home</a>
-        <a href="#" class="block py-1 text-gray-600 hover:underline">About us</a>
-        <a href="#" class="block py-1 text-gray-600 hover:underline">Services</a>
-        <a href="#" class="block py-1 text-gray-600 hover:underline">Blog</a>
-        <a href="#" class="block py-1 text-gray-600 hover:underline">Contact</a>
+        <a href="#" class="block py-1 text-indigo-500 hover:underline">Home</a>
+        <a href="#" class="block py-1 text-gray-500 hover:underline">About us</a>
+        <a href="#" class="block py-1 text-gray-500 hover:underline">Departments</a>
+        @guest
+            <a href="#" class="block py-1 text-gray-500 hover:underline">Login</a>
+        @endguest
+
+        @auth
+            <a href="#" class="block py-1 text-gray-500 hover:underline">Portal</a>
+            <a href="#" class="block py-1 text-gray-500 hover:underline">Profile</a>
+            <a href="#" class="block py-1 text-gray-500 hover:underline">Logout</a>
+        @endauth
     </nav>
 </header>

@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::view('/', 'pages.home');
+
+Route::get('auth/steam', [AuthController::class, 'redirectToSteam'])->name('auth.steam');
+Route::get('auth/steam/handle', [AuthController::class, 'handle'])->name('auth.steam.handle');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
